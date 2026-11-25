@@ -1,0 +1,13 @@
+--- crypto/arch/amd64/crypto_arch.h.orig	Tue Nov 25 13:24:13 2026
++++ crypto/arch/amd64/crypto_arch.h	Tue Nov 25 13:24:13 2026
+@@ -24,6 +24,10 @@
+ 
+ #ifndef __ASSEMBLER__
+ extern uint64_t crypto_cpu_caps_amd64;
++
++void crypto_cpuid(uint32_t eax, uint32_t *out_eax, uint32_t *out_ebx,
++    uint32_t *out_ecx, uint32_t *out_edx);
++void crypto_xgetbv(uint32_t ecx, uint32_t *out_eax, uint32_t *out_edx);
+ #endif
+ 
+ #define CRYPTO_CPU_CAPS_AMD64_ADX	(1ULL << 0)

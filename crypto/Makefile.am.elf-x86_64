@@ -39,11 +39,15 @@ EXTRA_DIST += $(ASM_X86_64_ELF)
 
 if HOST_ASM_ELF_X86_64
 libcrypto_la_SOURCES += aes/aes_amd64.c
+libcrypto_la_SOURCES += arch/amd64/cpuid_amd64_gcc.c
 libcrypto_la_SOURCES += bn/arch/amd64/bn_arch.c
 libcrypto_la_SOURCES += modes/gcm128_amd64.c
 libcrypto_la_SOURCES += sha/sha1_amd64.c
 libcrypto_la_SOURCES += sha/sha256_amd64.c
 libcrypto_la_SOURCES += sha/sha512_amd64.c
+
+libcrypto_la_CPPFLAGS += -DHAVE_CRYPTO_CPUID
+libcrypto_la_CPPFLAGS += -DHAVE_CRYPTO_XGETBV
 
 libcrypto_la_CPPFLAGS += -DLIBRESSL_USE_AES_ASSEMBLY
 libcrypto_la_CPPFLAGS += -DLIBRESSL_USE_BN_ASSEMBLY

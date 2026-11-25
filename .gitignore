@@ -257,7 +257,8 @@ include/openssl/*.h
 /crypto/arch/aarch64/crypto_arch.h
 /crypto/arch/aarch64/crypto_cpu_caps.c
 /crypto/arch/alpha/
-/crypto/arch/amd64/
+/crypto/arch/amd64/crypto_arch.h
+/crypto/arch/amd64/crypto_cpu_caps.c
 /crypto/arch/arm/
 /crypto/arch/hppa/
 /crypto/arch/i386/
